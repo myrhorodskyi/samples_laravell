@@ -1,0 +1,88 @@
+.avatar-wrap {
+
+  position: relative;
+  top:-15px;
+  @include media-breakpoint-down(xs) {
+    width: auto;
+    margin: 0 auto;
+   // max-width: 250px;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 0 15px 0 0;
+    top:0!important;
+   // width: 260px;
+  }
+
+
+
+  @include media-breakpoint-up(md) {
+  //  width: 370px;
+  //  margin:0 auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    //width: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(sm) {
+   margin: 0 auto;
+  }
+
+  .avatar {
+   // height: 100%;
+    position: relative;
+  }
+
+   .avatar-wrap-border {
+     border: 1px solid #ebf4fc;
+  }
+
+
+}
+.avatar-control {
+  position: absolute;
+  bottom: 32px;
+  left: 36px;
+  .decrease-size{
+    @include background-gradient(#fe8b6a, #ffa861, 45deg);
+  }
+  .increase-size {
+    background-color: rgba(62,63,173, 0.9);
+  }
+  .resize-avatar-btn {
+    border: none;
+
+    @include media-breakpoint-between(md, lg) {
+	  height:40px;
+	  width: 40px;
+	  padding: 5px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      height:40px;
+      width: 40px;
+	  padding: 5px;
+    }
+    height:55px;
+    width: 55px;
+    color: #fff;
+    cursor: pointer;
+    .avatar-size-icon {
+      font-size: 31px;
+    }
+  }
+}
+
+.avatar-shadow {
+   @include background-gradient(rgba(40,19,75, 1), rgba(40, 19, 75, 0.01), 0deg);
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

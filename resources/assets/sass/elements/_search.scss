@@ -1,0 +1,114 @@
+.search_input {
+  &:after {
+    right: -1px;
+    left: -1px;
+  }
+  min-height:90px!important;
+  background-color: rgba(120, 112, 249, 0.1);
+  flex-direction: row;
+
+ &.md-input-focused input {
+   color: #fff!important;
+   text-shadow: none!important;
+   -webkit-text-fill-color:#fff!important;
+ }
+  input#search {
+    padding: 0 20px!important;
+    height: 90px!important;
+    color: #fff!important;
+    text-shadow: none!important;
+    &:-webkit-autofill {
+      -webkit-text-fill-color: #fff;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+
+
+  }
+  label {
+      position: absolute !important;
+      font-family: "Lato", sans-serif;
+      font-weight:300;
+      font-size: 30px!important;
+      color: #fff!important;
+      text-transform: none!important;
+      top: 50%!important;
+      left: 20px!important;
+      width: auto;
+      background-color: transparent;
+      transform: translateY(-50%)!important;
+    @include media-breakpoint-down(sm) {
+      font-size: 26px!important;
+    }
+   }
+
+  &.md-has-value label, &.md-input-focused label {
+    opacity: 0!important;
+    visibility:hidden;
+  }
+
+  .out-btn-search, .out-btn-search:hover {
+    @extend .out-btn-danger;
+    border: 1px solid $btn-danger-color;
+    background-color: rgba(254,120,113, 0.1)!important;
+    color: #fff;
+    font-size: 16px;
+    padding: 25px 52px;
+    position: relative;
+    right: 10px;
+  }
+}
+
+.out-btn-search {
+  &.visible-xs {
+    @extend .out-btn-danger;
+    border: 1px solid $btn-danger-color;
+    background-color: rgba(254,120,113, 0.1)!important;
+    color: #fff;
+    font-size: 16px;
+    padding: 25px 52px;
+    position: relative;
+  }
+}
+
+.adv-search-link {
+  display: block;
+  font-family: "Lato", sans-serif;
+  color: #fff !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 600;
+  text-align: right;
+  float: right;
+  line-height: 3;
+  right: 30px;
+  a {
+    &:after {
+      content: "\25BC";
+      position: absolute;
+      background: none;
+      color: #fff;
+      opacity: 1;
+      font-size: 7px;
+      right: -10px;
+      transform: translateY(50%);
+    }
+    &.show {
+      &:after {
+        content: "\25B2";
+        position: absolute;
+        background: none;
+        color: #fff;
+        opacity: 1;
+        font-size: 7px;
+        right: -10px;
+        transform: translateY(50%);
+      }
+
+    }
+  }
+
+
+}

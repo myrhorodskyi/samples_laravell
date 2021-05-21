@@ -1,0 +1,583 @@
+.out-btn {
+  padding: 15px 25px;
+  .icon-plus {
+    position: relative;
+    font-size: 10px;
+    top:-2px;
+  }
+}
+
+.out-btn-secondary {
+  background-color: transparent!important;
+}
+
+.out-btn-danger {
+  border:2px solid $btn-danger-color;
+  color:$btn-danger-color;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  &:hover {
+    border:2px solid darken($btn-danger-color, 20%);
+    color:darken($btn-danger-color, 20%);
+  }
+}
+
+
+.out-btn-info {
+  @include border-gradient(rgba(120,114,249, 1), rgba(127,190,252, 1), 1px );
+  color: $btn-info-color;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+
+.out-btn-edit-profile {
+  border-width:2px!important;
+  @include border-gradient(rgba(255,90,81, 1), rgba(254,249,140, 1), 1px );
+  color: #fff!important;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  border: solid;
+  font-weight: 700;
+}
+
+
+
+.out-btn-primary, .out-btn-primary:focus {
+  @include radial-center-gradient(rgba(5,124,231, 1), rgba(13,101,196, 1));
+  @include media-breakpoint-up(md) {
+    padding: 30px 50px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 25px 40px;
+    font-size: 14px;
+  }
+  position: relative;
+
+  color: #fff!important;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+
+  z-index: 1;
+
+  -webkit-box-shadow: 0px 10px 10px -8px rgba(0,0,0,0.7);
+  -moz-box-shadow: 0px 10px 10px -8px rgba(0,0,0,0.7);
+  box-shadow: 0px 10px 10px -8px rgba(0,0,0,0.7);
+  &:after {
+    content: '';
+    opacity: 0.5;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:url("../../images/primary-btn-fon2.png") no-repeat;
+    background-size: cover;
+  }
+}
+
+
+.out-btn-warning, .out-btn-warning:focus {
+  @include radial-center-gradient(rgba(254,195,87, 1), rgba(254,198,87, 1));
+  @extend .out-btn-primary, .out-btn-primary:focus
+
+}
+
+.out-btn-default {
+  @extend .out-btn-primary;
+  &:focus {
+    color: $input-label-color!important;
+  }
+
+  background: #fff!important;
+  color:$input-label-color!important;
+}
+
+  // media
+
+.remove-media-btn {
+  background-color: transparent;
+  border: 0;
+  top: 0;
+  position: absolute;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+
+  .icon {
+    font-size: 24px;
+    color: $out-red;
+    font-weight: bold;
+  }
+
+}
+
+
+  // upload media modal
+
+.media-upload-modal {
+  .upload-media {
+    display: block;
+    margin: 0 auto;
+    .icon {
+      font-size: 50px;
+      cursor: pointer;
+    }
+  }
+
+  .upload-media-done {
+    display: block;
+    top: -50%;
+    transform: translateY(-50%);
+  }
+
+ .modal-footer {
+   padding: 0;
+   margin: 0 auto;
+   display: block;
+   border-top:0;
+ }
+
+}
+
+.out-btn-truncate {
+  padding: 20px 40px!important;
+  text-transform: none!important;
+  &:before {
+    content: "\25B6";
+    position: absolute;
+    background: none;
+    color: #fff;
+    opacity: 1;
+    font-size: 7px;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &.show {
+    &:before {
+      content: "\25B2";
+      position: absolute;
+      background: none;
+      color: #fff;
+      opacity: 1;
+      font-size: 7px;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+  }
+}
+
+// calendar control button
+
+.btn-calendar-control {
+  border-width:2px!important;
+  @include border-gradient(rgba(254,120,113, 1), rgba(255,187,91, 1), 1px );
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    @include background-gradient(#fe7f6e, #ffb45d, 45deg);
+    .arrow-left {
+      background: url("../../icons/arrow_left_transparent.svg") no-repeat !important;
+    }
+    .arrow-right {
+      background: url("../../icons/arrow_right_transparent.svg") no-repeat !important;
+    }
+  }
+}
+
+// Join button
+
+.btn-join-now {
+  border-width:2px!important;
+  @include border-gradient(rgba(15,191,255, 1), rgba(22,249,205, 1), 1px);
+  color: #fff!important;
+  padding: 24px 25px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    color: #fff!important;
+    @include background-gradient(#0FBFFF, #16F9CD, 45deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+// reschedule button
+
+.btn-reschedule {
+  background-color: $out-green;
+  padding: 6px;
+  .icon {
+    font-size: 22px;
+    margin: 0 !important;
+    color: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: 'Reschedule';
+    display: inline-block;
+    width: 0 !important;
+    background-color: #fff;
+    left: 34px;
+    top: 0;
+    transition: all 0.5s;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    color: #311c55;
+    font-weight: 700;
+    line-height: 2.2;
+    overflow: hidden;
+
+  }
+
+  &:hover {
+    &:after {
+      padding: 0 5px;
+      left: 34px;
+      width: 95px !important;
+      transition: all 0.5s;
+    }
+  }
+}
+
+
+
+// saved advisor button
+
+.btn-save_person {
+  position: absolute;
+  right: 0;
+  background-color: $orange;
+  padding: 6px;
+  .icon {
+    font-size: 22px;
+    margin: 0 !important;
+    color: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: 'Save';
+    display: inline-block;
+    width: 0 !important;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    color: #311c55;
+    font-weight: 700;
+    line-height: 2.2;
+    overflow: hidden;
+  }
+
+  &:hover {
+    &:after {
+      padding: 0 5px;
+      left: -45px;
+      width: 45px !important;
+      transition: all 0.5s;
+    }
+  }
+}
+
+// remove from save advisor button
+
+.btn-unsave_advisor {
+  @extend .btn-save_advisor;
+  &:after {
+    content:'Remove from saved';
+    max-height: 35px;
+  }
+
+  &:hover {
+    &:after {
+      left: -155px;
+      width: 155px !important;
+      max-height: 35px;
+    }
+  }
+}
+
+
+// review button
+
+.btn-review {
+  @extend .btn-save_advisor;
+  cursor: pointer;
+  border: 0;
+  &:after {
+    content: 'Review advisor';
+    max-height: 35px;
+  }
+  &:hover {
+    &:after {
+      padding: 0 5px;
+      left: -150px;
+      width: 150px !important;
+      max-height: 35px;
+    }
+  }
+
+}
+
+
+
+// edit user profile
+
+.btn-user-edit-profile {
+   @extend .out-btn-edit-profile;
+  @include border-gradient(rgba(17,171,236, 1), rgba(22,223,195, 1), 1px );
+  background-color:  rgba(22,223,195, 0.1)!important;
+  padding: 22px 38px;
+}
+
+//experience edit button
+
+.btn-experience-edit {
+  &:hover {
+    background:none;
+  }
+}
+
+// login button
+
+.btn-login {
+  top: 100%;
+  position: relative;
+  transform: translateY(100%);
+}
+
+.btn-reset-pswd {
+  top: 50%;
+  position: relative;
+  transform: translateY(50%);
+}
+
+// become an advisor button
+.btn-become-advisor {
+  border: solid;
+  @extend .btn-calendar-control;
+  padding: 24px 25px;
+  color: #ff5b51!important;
+  &:hover {
+    color: #fff!important;
+  }
+}
+
+
+// saved advisor in appointments page
+
+.btn-saved-advisor-appointment {
+  @extend .out-btn-danger;
+  color: #fff!important;
+  border-width:1px!important;
+  font-size: 16px!important;
+  span {
+    margin-right: 15px;
+  }
+  .icon {
+    color: $btn-danger-color;
+    font-size: 24px;
+  }
+}
+
+
+// appointments call button
+
+.btn-call-type {
+  padding: 20px 10px!important;
+
+  text-transform:capitalize!important;
+  &.active {
+   // padding: 24px 18px!important;
+    @extend .out-btn-warning;
+    transform: scale(1.1)!important;
+  }
+  &:not(.active) {
+   // padding:18px!important;
+    @extend .out-btn-default;
+    color: #574870!important;
+    .icon {
+      color:$out-green;
+    }
+  }
+  .icon {
+    font-size: 24px;
+    margin-top: -10px!important;
+    margin-right: 10px!important;
+    margin-left: 15px!important;
+  }
+  .md-radio {
+    background-color: #fff;
+    border-radius: 50%;
+    .md-radio-container {
+      width: 23px!important;
+      height: 23px!important;
+      &:after {
+        background-color:#fe886b!important;
+        width: 9px;
+        height: 9px;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+        left: 5px;
+      }
+    }
+  }
+
+
+
+  .md-checked {
+    .md-radio-container {
+      border: 2px solid #fe886b!important;
+    }
+  }
+}
+
+// stripe button
+.stripe-btn {
+  border: 2px solid rgba(182, 79, 255, 0.1);
+  padding: 16px;
+  @include media-breakpoint-down(md) {
+	padding:5px;
+  }
+  .icon {
+    color: #fff;
+    font-size: 60px;
+    @include media-breakpoint-down(md) {
+      font-size: 40px;
+    }
+  }
+}
+
+
+// search button
+.btn-search {
+  max-width: 320px;
+  width: 100%;
+}
+
+// decline button
+
+.decline-btn, .decline-btn:focus {
+  border: 1px solid #c3d8ee;
+  color: #0e62c0;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 18px;
+  box-shadow: none;
+  text-transform: none;
+}
+
+// confirm button
+
+.confirm-btn {
+  @extend .decline-btn;
+}
+
+
+
+
+.like-btn {
+  display: inline-block;
+  width: 20px;
+  min-width: 20px;
+  min-height: 15px;
+  padding: 0;
+  height: 15px;
+  border: 0;
+  color: #afb3dd !important;
+  background: url('../../images/like-icon.png') no-repeat;
+  cursor: pointer;
+  &:hover, &:focus {
+    background-color: transparent!important;
+  }
+
+  &.active {
+    background: url('../../images/like-active-icon.png') no-repeat;
+  }
+}
+
+.reply-btn {
+  display: inline-block;
+  position: relative;
+  color: #afb3dd !important;
+  cursor: pointer;
+
+
+
+  &:before {
+    content:'';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    background: url('../../images/reply-icon.png') no-repeat;
+  }
+}
+
+.show-liked-list {
+  color: #afb3dd!important;
+  &.active {
+    color: #2a327d!important;
+    cursor: pointer;
+  }
+}
+
+.action-comment-btn {
+  cursor: pointer;
+  z-index: 2;
+  i {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #afafaf;
+  }
+  &:hover {
+    i {
+      background-color: #757575;
+    }
+  }
+}
+
+
+.action-post-btn {
+  cursor: pointer;
+  z-index: 2;
+  i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #8a8a8a;
+  }
+  &:hover {
+    i {
+      background-color: #626262;
+    }
+  }
+}
+

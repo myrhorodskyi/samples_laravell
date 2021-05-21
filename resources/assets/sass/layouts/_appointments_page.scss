@@ -1,0 +1,70 @@
+.l_appointments_page {
+  .page_header {
+    padding: 100px 0;
+    @include media-breakpoint-down(sm) {
+      padding: 80px 0;
+    }
+
+    .container {
+      top:-30px;
+    }
+  }
+  .appointment_tab_container {
+    margin-top: -66px;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-top: -56px;
+    }
+  }
+   .appointment_tab_menu {
+     position: relative;
+   }
+
+  .layout {
+    >.container {
+      @include media-breakpoint-down(sm) {
+        padding: 50px 0;
+      }
+      padding: 100px 0;
+    }
+  }
+  .pre-footer {
+    margin-top: 0;
+  }
+  .appoinment_item {
+    @include media-breakpoint-down(sm) {
+      margin: 0 auto;
+    }
+  }
+  .agreement-row {
+    @include media-breakpoint-down(sm) {
+      margin: 3rem 0!important;
+    }
+  }
+  .l_request_appointment {
+    .info-for-advisor {
+      .md-input-container {
+        @include media-breakpoint-down(md) {
+          label {
+            top:0;
+            @include media-breakpoint-down(xs) {
+              font-size: 3vw;
+            }
+          }
+        }
+        &.md-has-value, &.md-input-focused {
+          label {
+              @include media-breakpoint-down(md) {
+                top:-15px;
+              }
+
+
+            @include media-breakpoint-only(sm) {
+              top:-35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

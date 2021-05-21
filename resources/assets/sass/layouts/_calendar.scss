@@ -1,0 +1,521 @@
+.__vev_calendar-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 95px 0;
+  @include media-breakpoint-down(md) {
+    padding: 60px 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    flex-direction: column-reverse;
+  }
+  *{
+    box-sizing: border-box;
+  }
+
+
+
+  .event_day {
+    font-family: "Lato", sans-serif;
+    font-size: 100px;
+    color: #fe7871;
+    font-weight: 300;
+    text-align: left;
+    @include media-breakpoint-down(lg) {
+      font-size: 42px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 20vw;
+    }
+
+  }
+
+  .event_day_of_week {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #414ec4;
+    font-size: 40px;
+    text-align: left;
+    @include media-breakpoint-down(lg) {
+      font-size: 26px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 7vw;
+      padding: 0 20px;
+      line-height: 1.1;
+    }
+  }
+
+  .event_mounth, .event_year {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #fe7871;
+    font-size: 14px;
+    text-align: left;
+  }
+  .event_mounth {
+    line-height: 2;
+  }
+
+  .event-timezone {
+    font-family: "Montserrat", sans-serif;
+    color: #fd9793;
+    text-align: left;
+    font-size: 17px;
+    line-height: 3;
+    font-weight: 700;
+    @include media-breakpoint-down(lg) {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 10px 20px 0;
+      line-height: 1.5;
+    }
+
+
+  }
+
+
+
+  .btn-add-event {
+    z-index: 0;
+  }
+
+  .btn-remove-slot {
+    &:after {
+      content: "\D7";
+      color: #fe7871;
+      font-size: 20px;
+    }
+  }
+
+  .btn-user-remove-slot {
+    &:after {
+      content: "\D7";
+      color: #fff;
+      font-size: 20px;
+
+    }
+  }
+
+  .cal-wrapper {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding-left: 25px;
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+      margin-top: 20px;
+    }
+    z-index: 1;
+    .cal-header{
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: 100px;
+      padding: 0 15px;
+      &>div{
+        padding: 14px 22px;
+     }
+
+      .btn-calendar-control {
+        width: 80px;
+        height: 60px;
+       // position: absolute;
+
+        .icon {
+          font-size: 30px;
+        }
+      }
+      .title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        margin: 0 auto;
+      }
+
+  // arrow control
+
+      .l {
+        left: 15px;
+        .arrow-left {
+          background: url("../../icons/arrow_left.svg") no-repeat;
+          width: 100%;
+          height: 10px;
+          top: 50%;
+          position: relative;
+          transform: translateY(-50%);
+        }
+      }
+
+      .r {
+        right: 15px;
+        .arrow-right {
+          background: url("../../icons/arrow_right.svg") no-repeat;
+          width: 100%;
+          height: 10px;
+          top: 50%;
+          position: relative;
+          transform: translateY(-50%);
+
+        }
+
+      }
+    }
+
+    .cal-header_title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      color: $blue-dark;
+      margin: 0 auto;
+      text-align: center;
+      .cal-header_mounth {
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+      .cal-header_year {
+        font-size: 14px;
+      }
+    }
+    .cal-body{
+      width: 100%;
+      margin-top: 25px;
+      margin-left: 20px;
+      @include media-breakpoint-down(lg) {
+        margin-left: 0;
+      }
+      .weeks{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 1rem;
+        .item {
+          line-height: 50px;
+          float: left;
+        //  width: 14%;
+          @include media-breakpoint-up(xl) {
+            width: 105px;
+          }
+
+          @include media-breakpoint-down(xl) {
+            width: 100px;
+          }
+          @include media-breakpoint-down(lg) {
+            width: 85px;
+          }
+          @include media-breakpoint-down(md) {
+            width: 65px;
+          }
+
+          @include media-breakpoint-down(sm) {
+            width: 77px;
+          }
+
+          @include media-breakpoint-down(xs) {
+            width: 14%;
+          }
+          color: $input-text-color;
+          font-weight: 900;
+        }
+      }
+      .dates {
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 12px;
+        .item {
+          //width: 14%;
+          height: 50px;
+          @include media-breakpoint-up(xl) {
+            width: 105px;
+          }
+          @include media-breakpoint-down(xl) {
+            width: 100px;
+          }
+          @include media-breakpoint-down(lg) {
+            width: 85px;
+          }
+          @include media-breakpoint-down(md) {
+            width: 65px;
+          }
+
+          @include media-breakpoint-down(sm) {
+            width: 77px;
+          }
+
+          @include media-breakpoint-down(xs) {
+            width: 14%;
+          }
+
+          position: relative;
+          float: left;
+          cursor: default;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          color: #54397c;
+          font-weight: 400;
+          .date-num{
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            &.disabled {
+              pointer-events: none;
+          }
+          }
+          &.event{
+            cursor: pointer;
+          }
+
+          .is-today {
+            content: '';
+            background-color: #fff;
+            border: 1px solid #fe7871;
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            left: 50%;
+
+          }
+          .is-selected {
+            border: 1px solid #fe7871;
+            width: 100%;
+            height: 50px;
+            background-color: #fe7871;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            left: 50%;
+            font-weight: 600;
+          }
+
+          &.available {
+            p {
+              color: #fe7871!important;
+            }
+          }
+          &.selected-day{
+            p {
+              color: #fff!important;
+              font-weight: 600;
+
+            }
+            .is-today{
+              background-color: #fe7871;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  .events-wrapper{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    border-radius: 10px;
+    line-height: 1;
+    z-index: 2;
+    //height: 170px;
+    @include media-breakpoint-down(sm) {
+      height: auto;
+    }
+    .cal-events {
+      width: auto;
+      overflow-y: auto;
+      max-height: 180px;
+	  justify-content: center;
+      @include media-breakpoint-down(xs) {
+        margin-right: 20px;
+      }
+    }
+    .date{
+      max-width: 60%;
+      min-width: 200px;
+      text-align: center;
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      margin: 0 auto;
+      font-size: 22px;
+    }
+    .event-item{
+      padding: 5px 17px;
+      width: 200px;
+      height: 50px;
+      margin-right: 20px;
+      margin-top: 10px;
+      background-color: #fff;
+      color: #3c3c3c;
+      border: 1px solid #f9d3d3;
+      position: relative;
+      @include media-breakpoint-down(lg) {
+        width: 190px;
+      }
+      @media screen and (min-width: 1200px) {
+        width: 210px;
+      }
+
+      @include media-breakpoint-down(md) {
+      width: 170px;
+      font-size: 14px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        width: 160px;
+        font-size: 13px;
+        padding: 10px;
+      }
+      .title{
+        height: 40px;
+        line-height: 40px;
+        color: #323232;
+        font-size: 16px;
+        border-bottom: 1px solid #f2f2f2;
+      }
+      .time{
+        position: absolute;
+        right: 30px;
+        top: 17px;
+        color: #9b9b9b;
+        font-size: 14px;
+      }
+      .desc{
+        color: #9b9b9b;
+        font-size: 14px;
+        padding: 7px 0;
+      }
+      &:focus {
+        border: 1px solid #fe7871;
+        box-shadow: none;
+      }
+    }
+
+    .btn-user-remove-slot {
+      padding-left: 10px;
+      padding-bottom: 1px;
+    }
+
+    .selected-time {
+      background-color: #fe7871;
+      color: #fff;
+    }
+
+
+    .event-header {
+      height: 100px;
+    }
+
+    .dashed-border {
+      width: 100%;
+      margin: 20px 12px;
+    }
+    ::-webkit-scrollbar{
+      width: 8px;
+      height: 8px;
+      margin-left: 10px;
+      @include media-breakpoint-down(xs) {
+        width: 9px;
+      }
+    }
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px #fe7871;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: #fe7871;
+    }
+
+  }
+  .arrow-left.icon {
+    color: #000;
+    position: absolute;
+    left: 6%;
+    margin-top: 10px;
+  }
+  .arrow-left.icon:before {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid $icon-border-size currentColor;
+    border-right: solid $icon-border-size currentColor;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+  .arrow-right.icon {
+    color: #000;
+    position: absolute;
+    right: 6%;
+    margin-top: 10px;
+  }
+  .arrow-right.icon:before {
+    content: '';
+    position: absolute;
+    right: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid $icon-border-size currentColor;
+    border-right: solid $icon-border-size currentColor;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  h3, p{
+    margin: 0 auto;
+    padding: 15px 40%;
+    @include media-breakpoint-down(md) {
+      padding:15px 35%;
+    }
+  }
+  .selected-day-list {
+    @include media-breakpoint-up(sm) {
+      margin-right: 7%;
+    }
+    .md-chip {
+      border-radius: 0;
+      margin: 5px 10px;
+      background-color: #fe7871!important;
+    }
+  }
+  .selected-overflow {
+    margin-top: 10px;
+    height: 135px;
+    width: auto;
+    overflow-y: auto;
+    max-height: 180px;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .cal-event__button-top{
+    margin-top: 75px;
+  }
+  .cal-event__button-top__many-event{
+    margin-top: 315px;
+  }
+  .cal-events__priority {
+    z-index: 10;
+  }
+  .md-chip.md-accent.md-theme-default {
+    .btn-user-remove-slot {
+      cursor: pointer;
+      font-style: normal;
+      padding-left: 10px;
+      padding-bottom: 1px;
+      line-height: 0.6;
+    }
+  }
+}

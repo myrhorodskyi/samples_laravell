@@ -1,0 +1,62 @@
+.attach-file-container {
+  position: relative;
+  right: 15px;
+  top:0;
+  .upload-media {
+
+    background-color: rgba(255,255,255, 0.1)!important;
+    box-shadow: none;
+    cursor: pointer;
+    line-height: 50px;
+    margin: 15px;
+    @include media-breakpoint-down(sm) {
+      width: 40px!important;
+      height: 40px!important;
+      margin: 5px;
+    }
+    i {
+      cursor: pointer;
+    }
+  }
+  label {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+  }
+  > label {
+    @include media-breakpoint-down(md) {
+      position: relative;
+      top: 10px;
+    }
+  }
+
+  .post-media-content {
+    &.doc {
+      .media-col {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        top: 20px;
+        font-size: 18px;
+        width: 210px;
+
+      }
+    a {
+      font-size: 18px;
+      font-family: Lato, sans-serif;
+      color: #fff;
+      margin-left: 10px;
+    }
+    }
+  }
+  i {
+    img {
+      height: auto!important;
+    }
+  }
+  img {
+    height: 120px!important;
+  }
+
+
+}

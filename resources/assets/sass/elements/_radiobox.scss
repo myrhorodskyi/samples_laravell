@@ -1,0 +1,21 @@
+.md-radio .md-radio-container {
+  border: 2px solid #bdc4f0 !important;
+}
+
+.md-checked {
+  .md-radio-container {
+    border: 2px solid $blue-dark !important;
+  }
+}
+  // primary style for radio
+.md-primary {
+  .md-radio-container {
+    border-color: #0cacff!important;
+    width: 22px!important;
+    height: 22px!important;
+    &:after {
+      background-color: #0cacff!important;
+      transform: scale3D(0.7, 0.7, 0.7)!important;
+    }
+  }
+}

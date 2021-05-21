@@ -1,0 +1,114 @@
+@mixin text-gradient($startColor: #eee, $endColor: white, $way:to left) {
+  background: $startColor; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, $startColor, $endColor); /* For Chrome and Safari */
+  background:    -moz-linear-gradient(left, $startColor, $endColor); /* For old Fx (3.6 to 15) */
+  background:     -ms-linear-gradient(left, $startColor, $endColor); /* For pre-releases of IE 10*/
+  background:      -o-linear-gradient(left, $startColor, $endColor); /* For old Opera (11.1 to 12.0) */
+  background:         linear-gradient(to $way, $startColor, $endColor); /* Standard syntax; must be last */
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    color: $startColor;
+    background: transparent;
+  }
+
+}
+
+@mixin border-gradient($startColor: #eee, $endColor: white, $border-width:1px, $size:1, $way:to left) {
+    border-width: $border-width;
+    border-style: solid;
+
+    -webkit-border-image:
+            -webkit-gradient(linear, from($startColor), to($endColor)) $size !important;
+    -webkit-border-image:
+            -webkit-linear-gradient($startColor, $endColor) $size!important;
+    -moz-border-image:
+            -moz-linear-gradient($startColor, $endColor) $size !important;
+    -o-border-image:
+            -o-linear-gradient($startColor, $endColor) $size !important;
+    border-image:
+            linear-gradient(to $way, $startColor, $endColor) $size !important;
+}
+
+
+
+@mixin background-gradient($startColor: #eee, $endColor: white, $way:to left) {
+  background: $startColor;
+  background: -moz-linear-gradient($way, $startColor, $endColor);
+  background: -webkit-gradient($way, $startColor, $endColor);
+  background: -webkit-linear-gradient($way, $way 0%, $endColor 100%);
+  background: -o-linear-gradient($way, $startColor 0%, $endColor 100%);
+  background: -ms-linear-gradient($way, $startColor, $endColor);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$startColor, endColorstr=$endColor,GradientType=1 );
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$startColor, endColorstr=$endColor,GradientType=1 );
+  background: linear-gradient($way, $startColor, $endColor);
+}
+
+
+
+@mixin radial-center-gradient($start-color:#0873da, $end-color:#057ee9) {
+  background: -moz-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%); /* ff3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, $start-color, $end-color); /* safari4+,chrome */
+  background:-webkit-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%); /* safari5.1+,chrome10+ */
+  background: -o-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%); /* opera 11.10+ */
+  background: -ms-radial-gradient(center, ellipse cover, $start-color 0%, $end-color 100%); /* ie10+ */
+  background:radial-gradient(ellipse at center, $start-color 0%, $end-color 100%); /* w3c */
+}
+
+
+@mixin stepSliderPaginationActive() {
+  &:before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1.4);
+    transition: all 0.5s;
+
+    @include media-breakpoint-down(sm) {
+      width: 10vw;
+      height: 10vw;
+    }
+
+    -moz-box-shadow: inset 0px 0px 21px 0px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0px 0px 21px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: inset  0px 0px 21px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  &:after {
+    content: '';
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: scale(1.9);
+    transition: all 0.5s;
+
+    @include media-breakpoint-down(sm) {
+      width: 10vw;
+      height: 10vw;
+    }
+    -moz-box-shadow: inset 0px 0px 21px 0px rgba(255, 255, 255, 0.1);
+    -webkit-box-shadow: inset 0px 0px 21px 0px rgba(255, 255, 255, 0.1);
+    box-shadow: inset  0px 0px 21px 0px rgba(255, 255, 255, 0.1);
+  }
+}
+
+@mixin hover-animate-up() {
+  &:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+@mixin hover-animate-right() {
+  &:hover {
+    transform: translateX(3px);
+    transition: transform 0.3s ease-in-out;
+  }
+}

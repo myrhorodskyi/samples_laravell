@@ -1,0 +1,245 @@
+.l_booking_advisor {
+  .page_header {
+    height: 390px;
+    @include media-breakpoint-down(md) {
+      height: 235px;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 185px;
+    }
+  }
+  .content {
+    top:-160px;
+    @include media-breakpoint-down(md) {
+      top:-50px;
+    }
+    @include media-breakpoint-down(xs) {
+      padding: 0 25px;
+    }
+  }
+
+  .user-info {
+    padding: 60px 70px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  // appintment info
+
+  .appointment-info {
+    .card-block {
+      padding: 60px 70px 30px;
+    }
+  }
+
+
+  // booking chat group
+  .booking-chat-group {
+    margin-top: 35px;
+    margin-bottom: 50px;
+    .chat_time {
+      line-height:1.5;
+    }
+
+    .chat_time, .chat_date {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: $input-text-color;
+      .label {
+        line-height: 3;
+      }
+    }
+    .chat_date {
+     margin-bottom: 50px;
+    }
+    .dashed-border {
+      top:30px;
+      position: relative;
+    }
+  }
+
+  // discount form
+  .discount-form, .credit-balance-form {
+    @include media-breakpoint-down(sm) {
+      margin-top: 0;
+    }
+    margin-top: 50px;
+    position: relative;
+    .booking-discount-input, .credit-balance-input {
+      display: flex;
+      align-items: center;
+      width: 80%;
+    }
+    button {
+      position: absolute;
+      top:0;
+      right:0;
+    }
+
+    .text-placeholder {
+      width: 50%;
+      position: absolute;
+      right: 0;
+      top:0;
+      line-height: 1.5;
+      @include media-breakpoint-only(md) {
+        top:14px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+     .discount-form {
+        margin-bottom: 50px;
+     }
+  }
+
+  // payment card
+
+  .payment-info {
+    color: #fff;
+    background: url("../../images/media-bg.png") no-repeat 100% 100% / cover;
+    .card {
+      background-color: transparent;
+      .label {
+        color: #ffb45d!important;
+        line-height: 2;
+      }
+      .cost {
+        color: #fff;
+        line-height: 1.5;
+      }
+      .app-cost {
+        font-size: 32px;
+      }
+      .discount-applied, .credit-applied {
+        font-size: 22px;
+      }
+      .dashed-border {
+        margin: 0 70px;
+        @include media-breakpoint-down(sm) {
+          margin: 0 15px;
+        }
+        border-color: #85688d;
+      }
+      .final-cost {
+        i {
+          font-style: inherit!important;
+          font-size: 40px;
+          @include text-gradient(#fe816e, #ffb35d, top);
+
+        }
+        span {
+          position: relative;
+          font-size:90px;
+          font-weight: 200;
+          color: #fff;
+          bottom: -25px;
+        }
+      }
+    }
+    .card-block {
+      padding: 52px 70px;
+      .row {
+        >div {
+          @include media-breakpoint-down(sm) {
+            margin-bottom: 20px;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .payment-final-cost {
+      height: 205px;
+      @include media-breakpoint-only(md){
+        height: 150px;
+      }
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+
+    }
+
+
+  }
+
+  .payment-card {
+    @include media-breakpoint-only(md) {
+      .card-number-col {
+          order: 1;
+      }
+
+      .expiration_date-col {
+         order: 3;
+      }
+
+      .city-col {
+        order: 2;
+      }
+
+      .cv2-col {
+        order:4;
+      }
+      .sate-col {
+        order:5;
+
+      }
+      .zip-code-col {
+        order:6;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .card-number-col {
+        order: 4;
+      }
+
+      .city-col {
+        order: 2;
+      }
+
+      .sate-col {
+        order:3;
+
+      }
+
+      .expiration_date-col {
+        order: 6;
+
+      }
+
+      .cv2-col {
+        order:4;
+      }
+
+      .zip-code-col {
+        order:6;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      .expiration_date-col {
+        flex: 0 50%;
+      }
+      .cv2-col {
+        flex:0 50%;
+      }
+
+      .zip-code-col {
+        order:3;
+      }
+    }
+
+  }
+
+
+
+
+
+}

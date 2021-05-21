@@ -1,0 +1,28 @@
+.round-out-border {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 120px;
+  height: 20px;
+  z-index: 1;
+  background: rgba(38, 17, 76, 1);
+   &:before{
+     content: "";
+     position: absolute;
+     bottom: 0;
+     width: 30px;
+     left: -28px;
+     height: 21px;
+     background: url("../../images/rounded-tab-corner.png") no-repeat;
+   }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 30px;
+      height: 21px;
+      background: url("../../images/rounded-tab-corner-right.png") no-repeat;
+      right: -26px;
+    }
+ }

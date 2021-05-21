@@ -1,0 +1,142 @@
+.appoinment_item {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  background-color: rgba(82,82,150, 0.04);
+  margin-bottom: 75px;
+  @include media-breakpoint-down(md) {
+    margin: 0 auto 30px;
+  }
+
+  .app-avatar-wrap {
+    position: relative;
+    max-width:320px;
+    width: 100%;
+    .user-info-panel {
+      font-family: "Montserrat", sans-serif;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      > * {
+        position: relative;
+        left: -50%;
+        top: 0;
+      }
+      .user_name {
+        color: #fff;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .app-card-body {
+    background-color: #fff;
+    height: 290px;
+    overflow-y: auto;
+    .app-desc {
+      padding: 0 30px;
+      font-family: "Lato", sans-serif;
+      font-size: 16px;
+      color:#574870;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      overflow-x: hidden;
+    }
+  }
+
+  .call-type {
+    color: #fff;
+    font-size: 18px;
+    font-family: "Lato",sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    top: -12px;
+    position: relative;
+    .icon-video_icon {
+      position: relative;
+      top:-2px;
+      color: #fcbb5e;
+      font-size: 22px;
+
+    }
+
+    .icon-audio_icon {
+      position: relative;
+      top:-6px;
+      color: #88d260;
+      font-size: 22px;
+    }
+  }
+
+  .app-advisor-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    .badge {
+      position: relative;
+      left: -50%;
+      background-color: $out-red;
+      font-size: 20px;
+      padding: 12px 24px;
+    }
+  }
+
+  .app-periods {
+  /*  line-height: 2;*/
+    button {
+      font-family: "Montserrat", sans-serif;
+      font-size:15px;
+      font-weight: 600;
+      color:$light-blue;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  .appointment_item-control {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+  }
+
+  .appointment_status-control {
+    background-color: #fafcfc;
+    @include media-breakpoint-down(lg){
+      padding: 10px;
+    }
+    padding: 30px;
+
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .link_to_chat {
+    font-family: "Montserrat", sans-serif;
+    font-size:15px;
+    font-weight: 600;
+    color:#414ec4!important;
+    border: 0;
+    margin: 0 auto;
+    &:hover {
+      color: lighten(#414ec4, 7%)!important;
+    }
+  }
+
+
+}
+
+.app-row {
+  &:after {
+    @include media-breakpoint-up(md){
+      content: '';
+      flex-basis: auto;
+      width: 29%;
+    }
+
+  }
+}

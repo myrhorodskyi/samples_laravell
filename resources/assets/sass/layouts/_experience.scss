@@ -1,0 +1,85 @@
+.experience, .education {
+  font-family: 'Montserrat', sans-serif;
+  @include media-breakpoint-up(md) {
+    flex: 0 0 49%;
+    max-width: 49%
+  }
+  margin-top: 36px;
+  margin-bottom: 36px;
+  @include media-breakpoint-down(xs) {
+    padding: 0;
+  }
+
+  .experience-wrap, .education-wrap {
+    .card-block {
+        padding: 0;
+      .company-wrap, .school-wrap {
+        padding:30px 40px;
+        @include media-breakpoint-down(sm) {
+          padding: 30px;
+        }
+      }
+    }
+
+    .company_name {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.5;
+      color: $input-text-color;
+      @include media-breakpoint-down(sm) {
+        font-size: 18px;
+      }
+    }
+    .position {
+      @extend .sub-title;
+      color: $out-red;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: 0!important;
+    }
+    .period {
+      font-size: 14px;
+      color: #7c53e0;
+      line-height: 1;
+      font-weight: 600;
+    }
+    .desc {
+      @extend .text;
+      color: #574870;
+      line-height: 1;
+    }
+  }
+  .point {
+    background-color: #7c53e0;
+    display: inline-block;
+  }
+
+  .btn-experience-edit {
+    position: absolute;
+    right: 0;
+    top:0;
+  }
+
+}
+
+.experience {
+  padding-left: 0;
+}
+
+.education {
+  padding-right: 0;
+}
+
+.media-col {
+  margin-top: 36px;
+}
+
+
+
+
+
+
+
+

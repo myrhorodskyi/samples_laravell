@@ -1,0 +1,153 @@
+.advanced-search {
+  font-size: 16px;
+  letter-spacing: 0;
+  color: initial;
+  margin-top: 20px;
+  .card {
+    background-color: #fff;
+    z-index: 11111;
+    .card-block {
+      padding:70px;
+      @include media-breakpoint-down(md) {
+        padding: 20px;
+      }
+      .rate-slide-container {
+        padding-top: 25px;
+        label {
+          position: relative;
+          top:-30px;
+          font-size: 14px;
+        }
+      }
+      .custom-check {
+        @include media-breakpoint-down(md) {
+          margin: 20px 0 0 0;
+        }
+      }
+      .custom-input {
+        label {
+          font-size: 14px!important;
+        }
+      }
+    }
+
+
+    .skill-select {
+      z-index: 5;
+      &.active {
+        label {
+        //  top:23px!important;
+        }
+      }
+      label {
+        z-index:5;
+      }
+
+      .multiselect__tags {
+         height: 100%!important;
+      }
+
+      /*.multiselect__input {
+        position: absolute;
+        top: 0!important;
+      }*/
+      &.value-active {
+        label {
+          top:0!important;
+        }
+
+      }
+    }
+
+
+    // search calendar
+    .__vev_calendar-wrapper {
+      padding: 0;
+      .cal-wrapper {
+        padding: 0;
+        .cal-header {
+          box-shadow: none;
+        }
+        .cal-body {
+          margin: 0;
+        }
+        .range-selected {
+          p {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .cal-body {
+        .item {
+          width: 90px;
+          @include media-breakpoint-down(lg) {
+            width: 70px;
+          }
+          @include media-breakpoint-down(md) {
+            width: 60px;
+          }
+        }
+      }
+
+    }
+
+    // time picker
+
+    .time-picker-container .time-picker .dropdown {
+       width: 300%;
+    }
+
+    .custom-check {
+      label {
+        font-size: 18px;
+        font-weight:400;
+      }
+    }
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 0 10px 12px;
+      border-color: #f5f9fa transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      top: -12px;
+      right: 99px;
+    }
+  }
+
+
+  .left-column {
+    @include media-breakpoint-up(lg) {
+      padding-right: 60px;
+    }
+  }
+
+  // reset search filter
+  .reset-search-filter {
+    font-family: "Lato",sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $blue-dark;
+    font-weight: 600;
+    padding-left: 0;
+    padding-right: 0;
+    .icon {
+      color: #c5c8e0;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  // search button
+  .btn-search {
+    top:50%;
+    transform: translateY(50%);
+  }
+
+}

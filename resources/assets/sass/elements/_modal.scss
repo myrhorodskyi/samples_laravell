@@ -1,0 +1,494 @@
+.modal-header {
+  background: url("../../images/modal-header-bg.png") no-repeat 100% 100% / cover;
+  min-height: 280px;
+  color: #fff;
+  font-size: 48px;
+  @include media-breakpoint-down(sm) {
+    font-size: 30px;
+  }
+  text-align: center;
+  display: block;
+  line-height: 4;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 12, 39, .87);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+
+  overflow-x: hidden;
+  align-items: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  ::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    margin-left: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px #fe7871;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #fe7871;
+  }
+
+}
+
+.modal-container {
+  position: relative;
+  top:15%;
+  background-color: #f7fafd;
+  min-width: 300px;
+  max-width: 1140px;
+  margin: 0 auto;
+  button {
+    &.close {
+      font-size: 60px;
+      @include media-breakpoint-down(sm) {
+        font-size: 40px;
+      }
+      margin: 15px -25px;
+    }
+  }
+
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 0;
+  .container {
+    padding: 70px 70px;
+    background-color: transparent;
+    top: -90px;
+    width: 90%!important;
+    box-shadow: 0px 2px 13px 0px rgba(134, 123, 154, 0.13);
+  }
+}
+
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+button, button:hover {
+  &.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+
+
+
+// shedule-form-modal
+.shedule-form-modal {
+  .repeat-schedule {
+    margin: 4px 0 10px;
+
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  .time-picker-container {
+    margin-right: 30px;
+  }
+
+  .modal-header {
+    height: auto;
+    text-align: left;
+    padding: 0 50px;
+
+  }
+
+  .modal-container {
+    max-width: 800px;
+    width: 80%;
+  }
+
+  .modal-body {
+    .container {
+      top:0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  .md-input-container {
+      label {
+       // top:0!important;
+      }
+  }
+
+
+  .remove-period {
+    height: 100%;
+    box-shadow: 0 0 black;
+    display: flex;
+    align-self: center;
+    .icon {
+      font-size: 26px;
+      color: red;
+    }
+  }
+
+  h1,h2,h3 {
+    letter-spacing: -2px;
+  }
+  .box {
+    padding: 15px 50px;
+  }
+
+  .recurrence-label, .md-radio-label {
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    font-weight:400;
+    color:$input-text-color!important;
+    text-transform: capitalize;
+
+  }
+
+  .modal-footer {
+    display: inline-block;
+    text-align: left;
+    border: 0;
+    height: 0;
+    padding: 0 50px;
+    button {
+      margin-right: 20px;
+    }
+  }
+
+  .time-picker input.display-time {
+     padding: 0;
+  }
+}
+
+
+
+// media upload modal
+
+.media-upload-modal {
+  @extend .shedule-form-modal;
+  button {
+    margin-left: 35px;
+  }
+
+  .uploaded-media-col {
+    align-self: flex-start;
+    .uploaded-media-doc {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 160px;
+    }
+  }
+
+}
+
+// review modal
+
+.review-modal {
+  .modal-footer {
+    padding: 0;
+  }
+  .modal-header {
+    line-height: 3;
+    @include media-breakpoint-down(sm) {
+      height: 230px;
+    }
+  }
+  .modal-footer {
+    border: 0;
+  }
+  .modal-wrapper {
+    .modal-container {
+      @include media-breakpoint-up(xs) {
+        max-width: 1200px;
+      }
+      .modal-body {
+        >.container {
+          top:-120px;
+          box-shadow: none;
+          width: 100%!important;
+          @include media-breakpoint-down(md) {
+            padding: 0 10px 0!important;
+          }
+          padding: 0 70px 0!important;
+        }
+      }
+      button {
+        &.close {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .card {
+    border-radius:0;
+  }
+
+  .review-prepared {
+    label {
+      @include media-breakpoint-up(xl) {
+        width: 66%;
+      }
+    }
+  }
+
+  .review-knowledgeable {
+    label {
+      @include media-breakpoint-up(xl) {
+        width: 75%;
+      }
+    }
+  }
+
+  .review-useful {
+    label {
+      @include media-breakpoint-up(xl) {
+        width: 66%;
+      }
+    }
+  }
+
+  .review-recommend {
+    .md-radio {
+      margin: 40px 20px 16px 0;
+      @include media-breakpoint-down(lg) {
+        margin: 40px 3% 16px 0;
+      }
+      @include media-breakpoint-down(lg) {
+        margin: 40px 2% 16px 0;
+      }
+      label {
+        position: absolute;
+        bottom: -30px;
+        left: -5px;
+      }
+    }
+  }
+
+  .review-card {
+    .card {
+      height: 210px;
+      @include media-breakpoint-down(sm) {
+        height: auto;
+      }
+      .card-block {
+        @include media-breakpoint-only(md) {
+          padding: 20px;
+        }
+
+        @include media-breakpoint-only(xs) {
+          padding: 20px;
+        }
+        padding: 30px 40px 40px;
+      }
+    }
+
+    padding: 5px;
+    label {
+       font-family: "Lato", sans-serif;
+       font-size: 20px;
+       color: $input-text-color;
+       line-height: 1.3;
+    }
+  }
+
+  .vue-star-rating {
+    position: relative;
+    display: block!important;
+    margin-top: 15px;
+
+    .vue-star-rating-rating-text {
+      position: absolute;
+    //  bottom: -20px;
+      //left: 130px;
+      right: 0;
+      font-size: 85px;
+      font-family: "Lato", sans-serif;
+      font-weight: 200;
+      padding: 25px 0;
+      top:-10px;
+      @include text-gradient(#fe9268, #ffb35d, right);
+
+    }
+
+    .vue-star-rating-star {
+      padding-right: 10px;
+      @include media-breakpoint-down(xs){
+        padding-right: 5px;
+      }
+    }
+  }
+
+  .review-btn-row {
+    position: absolute;
+    left: 50%;
+    margin-top: 30px;
+
+    button[type="submit"] {
+      margin: 0 auto;
+      position: relative;
+      left: -50%;
+    }
+  }
+
+  .alert {
+    .close {
+      display: none;
+    }
+  }
+}
+
+// remove slot modal
+
+.swal-modal {
+  .swal-text {
+    font-size: 20px!important;
+    text-align: center;
+  }
+}
+
+.remove-slot-modal {
+  width: 700px;
+
+}
+
+// close registration user modal
+
+.close-user-sign-up-modal {
+  .modal-container {
+	@include media-breakpoint-down(xs) {
+	  top:5%;
+	}
+  }
+  .modal-header {
+	h2 {
+	  color: #fff!important;
+	  @include media-breakpoint-down(sm) {
+		font-size: 26px!important;
+	  }
+	  @include media-breakpoint-down(xs) {
+		font-size: 20px;
+	  }
+
+	}
+    .intro-text {
+      text-align: center;
+      //font-family: "Lato", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: #d9bfff;
+      font-size: 22px;
+      margin: 10px 0 0 0;
+      @include media-breakpoint-down(xl) {
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin: 50px 0;
+        padding: 0 30px;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding:0;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 25px 0;
+      }
+
+      line-height: 1.5;
+      @include media-breakpoint-up(xl) {
+        width: 100%;
+      }
+    }
+	h4 {
+	  @include media-breakpoint-down(sm) {
+		font-size: 22px;
+	  }
+	  @include media-breakpoint-down(xs) {
+		font-size: 18px;
+	  }
+	}
+  }
+
+  .modal-body .container {
+	width: 100%;
+	@include media-breakpoint-down(xs) {
+	  padding: 0 15px;
+	  top:0;
+
+	}
+	form {
+	  @include media-breakpoint-up(sm) {
+		margin-top: 50px;
+	  }
+	}
+  }
+}
+
+
